@@ -231,6 +231,7 @@ print('Total training images: ' + str(len(X_train)))
 ```
 
 Then show the generated results
+
 ![alt text][image4]
 
 Normalized data:
@@ -271,6 +272,7 @@ Then show the preprocess data results:
 #### Design, train and test a model architecture
 
 Because I designed the model for the first time, I tried to modify it into my model with LeNet.
+
 Then I used it three times at a time, because I have Nvidia GTX 1070 so I added one more layer.
 
 <table>
@@ -452,15 +454,23 @@ def LeNet(x):
 
 ```
 After designing the model, it starts to be set.
+
 EPOCHS = 100
+
 BATCH_SIZE = 1024
+
 Learning rate = 0.0005
+
 cross_entropy = softmax
+
 optimizer = AdamOptimizer
 
 Because there are more than one category, use softmax instead of logits.
+
 Use ADAM to avoid gradient descent stopping at the peak
+
 Calculate the accuracy of each Epochs and plot it so that it can be very useful when troubleshooting.
+
 
 ```python
 x = tf.placeholder(tf.float32, (None, int(X_train.shape[1]), int(X_train.shape[2]), int(X_train.shape[3])))
@@ -550,111 +560,213 @@ Fc2.shape :(?, 84)
 Training...
 
 EPOCH1 Validation Accuracy=  4.8
+
 EPOCH2 Validation Accuracy=  3.4
+
 EPOCH3 Validation Accuracy=  1.4
+
 EPOCH4 Validation Accuracy=  3.4
+
 EPOCH5 Validation Accuracy=  5.4
+
 EPOCH6 Validation Accuracy=  0.7
+
 EPOCH7 Validation Accuracy=  1.4
+
 EPOCH8 Validation Accuracy=  1.4
+
 EPOCH9 Validation Accuracy=  1.3
+
 EPOCH10 Validation Accuracy=  1.3
+
 EPOCH11 Validation Accuracy=  2.0
+
 EPOCH12 Validation Accuracy=  2.0
+
 EPOCH13 Validation Accuracy=  0.7
+
 EPOCH14 Validation Accuracy=  2.7
+
 EPOCH15 Validation Accuracy=  2.7
+
 EPOCH16 Validation Accuracy=  0.7
+
 EPOCH17 Validation Accuracy=  1.9
+
 EPOCH18 Validation Accuracy=  7.4
+
 EPOCH19 Validation Accuracy=  18.6
+
 EPOCH20 Validation Accuracy=  45.8
+
 EPOCH21 Validation Accuracy=  65.6
+
 EPOCH22 Validation Accuracy=  74.9
+
 EPOCH23 Validation Accuracy=  82.4
+
 EPOCH24 Validation Accuracy=  86.6
+
 EPOCH25 Validation Accuracy=  86.5
+
 EPOCH26 Validation Accuracy=  89.0
+
 EPOCH27 Validation Accuracy=  89.2
+
 EPOCH28 Validation Accuracy=  90.4
+
 EPOCH29 Validation Accuracy=  90.2
+
 EPOCH30 Validation Accuracy=  91.8
+
 EPOCH31 Validation Accuracy=  90.5
+
 EPOCH32 Validation Accuracy=  90.5
+
 EPOCH33 Validation Accuracy=  92.2
+
 EPOCH34 Validation Accuracy=  92.3
+
 EPOCH35 Validation Accuracy=  92.1
+
 EPOCH36 Validation Accuracy=  92.9
+
 EPOCH37 Validation Accuracy=  93.0
+
 EPOCH38 Validation Accuracy=  93.4
+
 EPOCH39 Validation Accuracy=  92.9
+
 EPOCH40 Validation Accuracy=  93.2
+
 EPOCH41 Validation Accuracy=  92.9
+
 EPOCH42 Validation Accuracy=  93.1
+
 EPOCH43 Validation Accuracy=  94.0
+
 EPOCH44 Validation Accuracy=  95.0
+
 EPOCH45 Validation Accuracy=  94.6
+
 EPOCH46 Validation Accuracy=  94.2
+
 EPOCH47 Validation Accuracy=  95.0
+
 EPOCH48 Validation Accuracy=  95.3
+
 EPOCH49 Validation Accuracy=  95.6
+
 EPOCH50 Validation Accuracy=  95.2
+
 EPOCH51 Validation Accuracy=  96.3
+
 EPOCH52 Validation Accuracy=  95.3
+
 EPOCH53 Validation Accuracy=  96.0
+
 EPOCH54 Validation Accuracy=  96.2
+
 EPOCH55 Validation Accuracy=  95.6
+
 EPOCH56 Validation Accuracy=  95.9
+
 EPOCH57 Validation Accuracy=  95.1
+
 EPOCH58 Validation Accuracy=  96.3
+
 EPOCH59 Validation Accuracy=  95.0
+
 EPOCH60 Validation Accuracy=  95.4
+
 EPOCH61 Validation Accuracy=  96.1
+
 EPOCH62 Validation Accuracy=  95.8
+
 EPOCH63 Validation Accuracy=  96.5
+
 EPOCH64 Validation Accuracy=  96.2
+
 EPOCH65 Validation Accuracy=  95.4
+
 EPOCH66 Validation Accuracy=  96.3
+
 EPOCH67 Validation Accuracy=  97.1
+
 EPOCH68 Validation Accuracy=  96.9
+
 EPOCH69 Validation Accuracy=  95.9
+
 EPOCH70 Validation Accuracy=  96.1
+
 EPOCH71 Validation Accuracy=  97.0
+
 EPOCH72 Validation Accuracy=  96.2
+
 EPOCH73 Validation Accuracy=  96.6
+
 EPOCH74 Validation Accuracy=  97.1
+
 EPOCH75 Validation Accuracy=  97.0
+
 EPOCH76 Validation Accuracy=  97.4
+
 EPOCH77 Validation Accuracy=  97.4
+
 EPOCH78 Validation Accuracy=  97.5
+
 EPOCH79 Validation Accuracy=  97.6
+
 EPOCH80 Validation Accuracy=  96.5
+
 EPOCH81 Validation Accuracy=  96.9
+
 EPOCH82 Validation Accuracy=  97.0
+
 EPOCH83 Validation Accuracy=  97.0
+
 EPOCH84 Validation Accuracy=  97.0
+
 EPOCH85 Validation Accuracy=  96.9
+
 EPOCH86 Validation Accuracy=  97.1
+
 EPOCH87 Validation Accuracy=  97.1
+
 EPOCH88 Validation Accuracy=  97.3
+
 EPOCH89 Validation Accuracy=  96.2
+
 EPOCH90 Validation Accuracy=  96.8
+
 EPOCH91 Validation Accuracy=  97.4
+
 EPOCH92 Validation Accuracy=  97.2
+
 EPOCH93 Validation Accuracy=  97.2
+
 EPOCH94 Validation Accuracy=  97.6
+
 EPOCH95 Validation Accuracy=  97.1
+
 EPOCH96 Validation Accuracy=  97.5
+
 EPOCH97 Validation Accuracy=  97.7
+
 EPOCH98 Validation Accuracy=  96.8
+
 EPOCH99 Validation Accuracy=  96.8
+
 EPOCH100 Validation Accuracy=  97.9
 
 ![alt text][image6]
 
 
+
 Model saved
+
 INFO:tensorflow:Restoring parameters from .\mynet
+
 Test Accuracy = 0.964
 
 
@@ -713,23 +825,33 @@ Result:
 
 ![alt text][image7]
 INFO:tensorflow:Restoring parameters from .\mynet
+
 100%: Right-of-way at the next intersection
+
 ==========================================:D=========================================================
 ![alt text][image8]
 INFO:tensorflow:Restoring parameters from .\mynet
+
 100%: Speed limit (60km/h)
+
 ==========================================:D=========================================================
 ![alt text][image9]
 INFO:tensorflow:Restoring parameters from .\mynet
+
 100%: Keep right
+
 ==========================================:D=========================================================
 ![alt text][image10]
 INFO:tensorflow:Restoring parameters from .\mynet
+
 100%: Roundabout mandatory
+
 ==========================================:D=========================================================
 ![alt text][image11]
 INFO:tensorflow:Restoring parameters from .\mynet
+
 100%: Stop
+
 ==========================================:D=========================================================
 
 
