@@ -80,9 +80,13 @@ print("Image data shape =", image_shape)
 print("Number of classes =", n_classes)
 ```
 Result：
+
 Number of training examples = 258000
+
 Number of testing examples = 12630
+
 Image data shape = (32, 32, 3)
+
 Number of classes = 43
 
 Next I use BAR to visualize my data and randomly display training and test data to check if the distribution is consistent.
